@@ -18,7 +18,8 @@ data_loader = DataLoader(dataset, batch_size=1, shuffle=True, num_workers=4)
 
 # Define model and optimizer
 #model = models.BaselineModel(settings.HIDDEN_SIZE)
-model = models.SimpleLSTM(settings.HIDDEN_SIZE)
+#model = models.SimpleLSTM(settings.HIDDEN_SIZE)
+model = models.ConvLSTM(settings.HIDDEN_SIZE, settings.NUM_LAYERS, settings.KERNEL_SIZE, settings.KERNEL_NB, settings.BATCH_SIZE)
 optimizer = torch.optim.Adam(model.parameters(), lr=settings.LEARNING_RATE)
 
 # Visualization thorugh visdom
